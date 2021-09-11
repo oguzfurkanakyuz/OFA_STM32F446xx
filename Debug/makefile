@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := 001_OFA_Driver
+BUILD_ARTIFACT_NAME := 000_myDriver
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX := 
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME).$(BUILD_ARTIFACT_EXTENSION)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-001_OFA_Driver.elf \
+000_myDriver.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-001_OFA_Driver.list \
+000_myDriver.list \
 
 OBJCOPY_BIN += \
-001_OFA_Driver.bin \
+000_myDriver.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: 001_OFA_Driver.elf secondary-outputs
+main-build: 000_myDriver.elf secondary-outputs
 
 # Tool invocations
-001_OFA_Driver.elf: $(OBJS) $(USER_OBJS) E:\my_workspace\001_OFA_Driver\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "001_OFA_Driver.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\my_workspace\001_OFA_Driver\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001_OFA_Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+000_myDriver.elf: $(OBJS) $(USER_OBJS) E:\my_workspace\000_myDriver\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "000_myDriver.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\my_workspace\000_myDriver\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="000_myDriver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,13 +70,13 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-001_OFA_Driver.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "001_OFA_Driver.list"
+000_myDriver.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "000_myDriver.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-001_OFA_Driver.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "001_OFA_Driver.bin"
+000_myDriver.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "000_myDriver.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 

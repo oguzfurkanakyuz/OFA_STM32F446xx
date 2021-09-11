@@ -5,7 +5,7 @@
  *      Author: furkan
  */
 
-#include "gpio.h"
+#include "my_GPIO.h"
 
 /**
   * @brief  Initializes the GPIOx peripheral according to the specified parameters in the GPIO_Init.
@@ -31,7 +31,7 @@ void GPIO_Init(GPIO_TypeDef_t *GPIOx, GPIO_InitTypeDef_t *GPIO_ConfigStruct){
 
 			/* Mode Register Configuration */
 			temp_value = GPIOx->MODER;
-			temp_value &= !(0x3U << (position * 2U));
+			temp_value &= ~(0x3U << (position * 2U));
 			temp_value |= (GPIO_ConfigStruct->Mode << (position * 2U));
 			GPIOx->MODER = temp_value;
 
@@ -39,23 +39,35 @@ void GPIO_Init(GPIO_TypeDef_t *GPIOx, GPIO_InitTypeDef_t *GPIO_ConfigStruct){
 
 				/* Output Type Register Configuration*/
 				temp_value = GPIOx->OTYPER;
-				temp_value &= !(0x1U << position);
+				temp_value &= ~(0x1U << position);
 				temp_value |= (GPIO_ConfigStruct->Otype << position);
 				GPIOx->OTYPER = temp_value;
 
 				/* Output Speed Register Configuration*/
 				temp_value = GPIOx->OSPEEDR;
-				temp_value &= !(0x3U << (position * 2U));
+				temp_value &= ~(0x3U << (position * 2U));
 				temp_value |= (GPIO_ConfigStruct->Speed << (position * 2U ));
 				GPIOx->OSPEEDR = temp_value;
+
+
+				if(GPIO_ConfigStruct->Mode == GPIO_MODE_AF ){
+
+					temp_value = GPIOx->AFR[position >> 3U];
+					temp_value &= ~(0xFU << ( (position & 0x7U) * 4) );
+					temp_value |= (GPIO_ConfigStruct->Alternate << ( (position & 0x7U) * 4) );
+					GPIOx->AFR[position >> 3U] = temp_value;
 
 			}
 
 			/* Pull-Up/Pull-Down Register Configuration*/
 			temp_value = GPIOx->PUPDR;
-			temp_value &= !(0x3U << (position * 2U));
+			temp_value &= ~(0x3U << (position * 2U));
 			temp_value |= (GPIO_ConfigStruct->PuPd << (position * 2U));
 			GPIOx->PUPDR = temp_value;
+
+
+
+			}
 
 		}
 

@@ -1,5 +1,0 @@
-gpio.c:19:6:GPIO_Init	32	static
-gpio.c:81:6:GPIO_Write_Pin	16	static
-gpio.c:103:17:GPIO_Read_Pin	24	static
-gpio.c:124:6:GPIO_TogglePin	24	static
-gpio.c:145:6:GPIO_LockPin	24	static

@@ -1,0 +1,3 @@
+my_EXTI.c:11:6:EXTI_Init	4	static
+my_EXTI.c:68:6:EXTI_LineConfig	4	static
+my_EXTI.c:86:6:NVIC_EnableInterrupt	0	static

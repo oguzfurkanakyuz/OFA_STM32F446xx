@@ -1,10 +1,21 @@
-Src/main.o: ../Src/main.c ../Inc/stm32f446x.h ../Inc/rcc.h \
- ../Inc/stm32f446x.h ../Inc/gpio.h
+Src/main.o: ../Src/main.c ../Inc/my_stm32f446xx.h ../Inc/my_RCC.h \
+ ../Inc/my_stm32f446xx.h ../Inc/my_EXTI.h ../Inc/my_SPI.h \
+ ../Inc/my_GPIO.h ../Inc/my_USART.h ../Inc/my_I2C.h ../Inc/my_GPIO.h
 
-../Inc/stm32f446x.h:
+../Inc/my_stm32f446xx.h:
 
-../Inc/rcc.h:
+../Inc/my_RCC.h:
 
-../Inc/stm32f446x.h:
+../Inc/my_stm32f446xx.h:
 
-../Inc/gpio.h:
+../Inc/my_EXTI.h:
+
+../Inc/my_SPI.h:
+
+../Inc/my_GPIO.h:
+
+../Inc/my_USART.h:
+
+../Inc/my_I2C.h:
+
+../Inc/my_GPIO.h:

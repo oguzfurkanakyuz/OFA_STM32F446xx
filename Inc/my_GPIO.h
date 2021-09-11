@@ -2,7 +2,7 @@
 #ifndef MY_GPIO_H_
 #define MY_GPIO_H_
 
-#include "stm32f446x.h"
+#include "my_stm32f446xx.h"
 
 /*
  * @def_group GPIO_Pin_x defines the GPIO_InitTypeDef_t->pin_Number
@@ -68,6 +68,33 @@
 #define	GPIO_SPEED_FREQ_MEDIUM		0x1U	/* range 12,5 MHz to 50 MHz, please refer to the product datasheet */
 #define	GPIO_SPEED_FREQ_HIGH		0x2U	/* range 25 MHz to 100 MHz, please refer to the product datasheet  */
 #define	GPIO_SPEED_FREQ_VERY_HIGH	0x3U	/* range 50 MHz to 200 MHz, please refer to the product datasheet  */
+
+
+
+/*
+ * @def_group GPIO_Alternate_x defines the GPIO_InitTypeDef_t->Alternate
+ *
+ */
+
+#define GPIO_AF0	(0x0U)
+#define GPIO_AF1	(0x1U)
+#define GPIO_AF2	(0x2U)
+#define GPIO_AF3	(0x3U)
+#define GPIO_AF4	(0x4U)
+#define GPIO_AF5	(0x5U)
+#define GPIO_AF6	(0x6U)
+#define GPIO_AF7	(0x7U)
+#define GPIO_AF8	(0x8U)
+#define GPIO_AF9	(0x9U)
+#define GPIO_AF10	(0xAU)
+#define GPIO_AF11	(0xBU)
+#define GPIO_AF12	(0xCU)
+#define GPIO_AF13	(0xDU)
+#define GPIO_AF14	(0xEU)
+#define GPIO_AF15	(0xFU)
+
+
+
 
 
 typedef enum

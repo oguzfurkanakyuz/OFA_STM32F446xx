@@ -1,0 +1,12 @@
+my_SPI.c:13:13:SPI_TransmitterHelper_16Bits	4	static
+my_SPI.c:22:13:SPI_TransmitterHelper_8Bits	4	static
+my_SPI.c:35:13:SPI_ReceiveHelper_16Bits	0	static
+my_SPI.c:43:13:SPI_ReceiveHelper_8Bits	0	static
+my_SPI.c:59:6:SPI_Init	8	static
+my_SPI.c:82:6:SPI_PeriphCmd	0	static
+my_SPI.c:108:6:SPI_TransmitData	0	static
+my_SPI.c:154:6:SPI_ReceiveData	4	static
+my_SPI.c:197:18:SPI_GetFlagStatus	0	static
+my_SPI.c:206:6:SPI_TransmitData_IT	8	static
+my_SPI.c:231:6:SPI_InterruptHandler	8	static
+my_SPI.c:256:6:SPI_ReceiveData_IT	8	static

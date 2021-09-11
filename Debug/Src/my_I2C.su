@@ -1,0 +1,2 @@
+my_I2C.c:4:6:I2C_Init	16	static
+my_I2C.c:49:6:I2C_PeriphCmd	0	static

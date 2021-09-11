@@ -1,0 +1,10 @@
+my_USART.c:50:13:USART_ReceiveWidth_IT	0	static
+my_USART.c:25:13:USART_SendWidth_IT	4	static
+my_USART.c:103:20:USART_GetFlagStatus	0	static
+my_USART.c:110:6:USART_Init	8	static
+my_USART.c:178:6:USART_TransmitData	8	static
+my_USART.c:215:6:USART_RecieveData	8	static
+my_USART.c:271:6:USART_TransmitData_IT	8	static
+my_USART.c:289:6:USART_ReceiveData_IT	8	static
+my_USART.c:306:6:USART_InterruptHandler	8	static
+my_USART.c:330:6:USART_PeriphCmd	0	static
